@@ -16,19 +16,17 @@ export class AddNewTeacherComponent implements OnInit {
   }
 
   createTeacher(value){
+      const teacher = {
+        id : value.id,
+        name : value.name,
+        age : value.age
+      }
 
-    const teacher = {
-      id : value.id,
-      name : value.name,
-      age : value.age
-    }
 
-
-    this.service.addTeacher(teacher).subscribe((response)=>{
-      this.router.navigate(['teacher'])
-    },(error)=>{
-      console.log('ERROR - ', error)
-    })
+      this.service.addTeacher(teacher).subscribe((response)=>{
+        this.router.navigate(['teacher'])
+      },(error)=>{
+        console.log('ERROR - ', error)
+      })
   }
-
 }
