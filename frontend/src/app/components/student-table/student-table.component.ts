@@ -34,14 +34,24 @@ export class StudentTableComponent implements OnInit {
     this.router.navigate(['editStudent'], navigationExtras )
   }
 
-  getStudentData(){
-    this.service.getStudentData().subscribe((response)=>{
+  initializeDB(){
+    this.service.initializeDB().subscribe((response) => {
+      console.log('DB is Initialized')
+    }, (error) => {
+      console.log('ERROR - ', error)
+    })
+  }
+
+  getStudentData() {
+    this.selected = 'Students';
+    this.service.getStudentData().subscribe((response) => {
       this.studentData = Object.keys(response).map((key) => [response[key]]);
     },(error)=>{
       console.log('ERROR - ', error)
     })
   }
 
+  
   deleteStudent(itemid){
     const student = {
       id: itemid
