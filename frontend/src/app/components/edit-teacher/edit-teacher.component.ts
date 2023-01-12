@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import {AppServiceService} from '../../app-service.service';
+import { AppServiceService } from 'src/app/app-service.service';
 
 @Component({
   selector: 'app-edit-teacher',
