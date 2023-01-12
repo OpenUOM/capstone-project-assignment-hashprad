@@ -9,7 +9,6 @@ import { AppServiceService } from 'src/app/app-service.service';
 })
 export class EditTeacherComponent implements OnInit {
 
-
   teacherData: any;
 
 
