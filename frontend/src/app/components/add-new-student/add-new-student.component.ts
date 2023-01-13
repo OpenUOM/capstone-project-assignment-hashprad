@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppServiceService } from 'src/app/app-service.service';
 
-
 @Component({
   selector: 'app-add-new-student',
   templateUrl: './add-new-student.component.html',

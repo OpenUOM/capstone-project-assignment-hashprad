@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { AppServiceService } from 'src/app/app-service.service';
+import {AppServiceService} from '../../app-service.service';
 
 @Component({
   selector: 'app-edit-teacher',
@@ -8,6 +8,7 @@ import { AppServiceService } from 'src/app/app-service.service';
   styleUrls: ['./edit-teacher.component.css']
 })
 export class EditTeacherComponent implements OnInit {
+
 
   teacherData: any;
 
@@ -22,21 +23,22 @@ export class EditTeacherComponent implements OnInit {
 
   getTeacherData(){
     let teacher = {
-        id : this.navigation.extras.state.id
+      id : this.navigation.extras.state.id
     }
     this.service.getOneTeacherData(teacher).subscribe((response)=>{
-        this.teacherData = response[0];
+      this.teacherData = response[0];
     },(error)=>{
-        console.log('ERROR - ', error)
+      console.log('ERROR - ', error)
     })
   }
 
   editTeacher(values){
     values.id = this.navigation.extras.state.id;
     this.service.editTeacher(values).subscribe((response)=>{
-        this.teacherData = response[0];
+      this.teacherData = response[0];
     },(error)=>{
-       console.log('ERROR - ', error)
+      console.log('ERROR - ', error)
     })
   }
+
 }
