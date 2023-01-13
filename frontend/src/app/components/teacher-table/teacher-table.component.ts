@@ -75,10 +75,10 @@ export class TeacherTableComponent implements OnInit {
   }
 
   deleteTeacher(itemid) {
-    const test = {
+    const teacher = {
       id: itemid
     }
-    this.service.deleteTeacher(test).subscribe((response) => {
+    this.service.deleteTeacher(teacher).subscribe((response) => {
       this.getTeacherData()
     })
   }
