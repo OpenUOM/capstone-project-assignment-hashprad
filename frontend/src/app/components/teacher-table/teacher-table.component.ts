@@ -50,16 +50,7 @@ export class TeacherTableComponent implements OnInit {
       console.log('ERROR - ', error)
     })
   }
-
-  //getStudentData() {
-    //this.selected = 'Students';
-    //this.service.getStudentData().subscribe((response) => {
-      //this.teacherData = response;
-    //}, (error) => {
-      //console.log('ERROR - ', error)
-    //})
-  //}
-  
+ 
   deleteTeacher(itemid) {
     const teacher = {
       id: itemid
