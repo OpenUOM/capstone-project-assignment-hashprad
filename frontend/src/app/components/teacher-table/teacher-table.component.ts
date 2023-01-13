@@ -59,6 +59,15 @@ export class TeacherTableComponent implements OnInit {
       //console.log('ERROR - ', error)
     //})
   //}
+  
+  deleteTeacher(itemid) {
+    const teacher = {
+      id: itemid
+    }
+    this.service.deleteTeacher(teacher).subscribe((response) => {
+      this.getTeacherData()
+    })
+  }
 
   search(value) {
     let foundItems = [];
@@ -72,14 +81,5 @@ export class TeacherTableComponent implements OnInit {
       });
       this.teacherData = foundItems;
     }
-  }
-
-  deleteTeacher(itemid) {
-    const teacher = {
-      id: itemid
-    }
-    this.service.deleteTeacher(teacher).subscribe((response) => {
-      this.getTeacherData()
-    })
   }
 }
